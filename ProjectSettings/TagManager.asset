@@ -38,7 +38,13 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
+  - name: Shop BG
+    uniqueID: 3319617361
+    locked: 0
+  - name: Shop FG
+    uniqueID: 4141914155
+    locked: 0
+  - name: Ground BG
     uniqueID: 3339562809
     locked: 0
   - name: Default
