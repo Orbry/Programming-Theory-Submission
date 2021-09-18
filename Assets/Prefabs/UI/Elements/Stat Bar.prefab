@@ -211,7 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935f4e6528fb6e045b4cb7a56c1f1e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  m_Scrollbar: {fileID: 318653118090208445}
+  m_HandleImage: {fileID: 318653117732547163}
+  m_TextNode: {fileID: 0}
+  m_BarColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BarName: 
 --- !u!1 &318653119416974086
 GameObject:
   m_ObjectHideFlags: 0
