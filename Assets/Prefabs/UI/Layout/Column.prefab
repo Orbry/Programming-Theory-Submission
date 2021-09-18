@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9153546373383656130}
   - component: {fileID: 9153546373383656132}
   m_Layer: 5
-  m_Name: Column Two Rows
+  m_Name: Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,6 +173,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Row 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7352913998330059956, guid: d2f62a12722eb444f9301cc59f3d08af,
+        type: 3}
+      propertyPath: m_text
+      value: Stat 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f62a12722eb444f9301cc59f3d08af, type: 3}
 --- !u!224 &9153546372459049704 stripped
@@ -307,6 +312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Row 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352913998330059956, guid: d2f62a12722eb444f9301cc59f3d08af,
+        type: 3}
+      propertyPath: m_text
+      value: Stat 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f62a12722eb444f9301cc59f3d08af, type: 3}
