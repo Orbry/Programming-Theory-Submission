@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class Gear : Item, IWearable
+public class Potion : Item, IConsumable
 {
-    public Player.Slots Slot { get; private set; }
-    public Sprite Icon => m_ItemIcon;
+    [SerializeField] protected float Magnitude;
+    [SerializeField] protected Player.Stats Stat;
     
+    public void Consume(Player player)
+    {
+        // TODO: delete log
+        Debug.Log($"Drinking the {name}");
+        player.ChangeStat(Stat, Magnitude);
+    }
+
     public override void OnPointerClick(PointerEventData eventData)
     {
         // TODO: delete log
