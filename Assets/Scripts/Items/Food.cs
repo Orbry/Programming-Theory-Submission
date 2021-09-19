@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Potion : Item, IConsumable
+public class Food : Item, IConsumable
 {
-    [SerializeField] private float m_Magnitude;
-    [SerializeField] private Player.Stats m_Stat;
-    
+    [SerializeField] private float m_Saturation;
+    [SerializeField] private float m_Restoration;
+
     public void Consume(Player player)
     {
-        // TODO: delete log
-        Debug.Log($"Drinking the {name}");
-        player.ChangeStat(m_Stat, m_Magnitude);
+        player.ChangeNeed(Player.Needs.Hunger, m_Saturation);
+        player.ChangeNeed(Player.Needs.Stamina, m_Restoration);
     }
 
     public override void OnPointerClick(PointerEventData eventData)
