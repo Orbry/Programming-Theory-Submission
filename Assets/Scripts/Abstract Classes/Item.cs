@@ -9,6 +9,7 @@ using UnityEditor;
 
 public abstract class Item : MonoBehaviour, IPointerClickHandler
 {
+    [Header("Item settings")]
     [SerializeField] protected string m_ItemName;
     [SerializeField] protected Sprite m_ItemIcon;
     [SerializeField] protected SpriteRenderer m_SpriteRenderer;

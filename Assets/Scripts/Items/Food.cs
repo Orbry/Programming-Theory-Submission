@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Food : Item, IConsumable
 {
+    [Header("Food settings")]
     [SerializeField] private float m_Saturation;
     [SerializeField] private float m_Restoration;
 

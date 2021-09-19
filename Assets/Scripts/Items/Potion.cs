@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Potion : Item, IConsumable
 {
+    [Header("Potion settings")]
     [SerializeField] private float m_Magnitude;
     [SerializeField] private Player.Stats m_Stat;
     
