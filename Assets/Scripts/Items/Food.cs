@@ -17,8 +17,6 @@ public class Food : Item, IConsumable
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        // TODO: delete log
-        Debug.Log($"Item {name} clicked");
         if (Player.Instance != null)
         {
             Player.Instance.UseItem(this);

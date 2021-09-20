@@ -2,19 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controls the current value of player stats and equipped gear
 public class Player : MonoBehaviour
 {
     public enum Slots { Weapon, Body, Head }
     public enum Stats { Health, Mana }
     public enum Needs { Hunger, Stamina }
-    
     public static Player Instance { get; private set; }
+
+    [Header("UI Bars")]
+    [SerializeField] private StatBar m_HealthBar;
+    [SerializeField] private StatBar m_ManaBar;
+    [SerializeField] private StatBar m_HungerBar;
+    [SerializeField] private StatBar m_StaminaBar;
+
+    [Header("UI Inventory")]
+    [SerializeField] private InventorySlot m_WeaponSlot;
+    [SerializeField] private InventorySlot m_ArmorSlot;
+    [SerializeField] private InventorySlot m_HelmetSlot;
 
     private Dictionary<Stats, float> m_Stats = new Dictionary<Stats, float>();
     private Dictionary<Needs, float> m_Needs = new Dictionary<Needs, float>();
-    
-    // TODO: hook stats and needs with bars in UI
-    // TODO: hook gear with slots in UI
     
     private void Awake()
     {
@@ -26,18 +34,23 @@ public class Player : MonoBehaviour
         m_Needs.Add(Needs.Hunger, 0.15f);
         m_Needs.Add(Needs.Stamina, 0.4f);
     }
-    
+
+    private void Start()
+    {
+        m_HealthBar.Value = m_Stats[Stats.Health];
+        m_ManaBar.Value = m_Stats[Stats.Mana];
+        
+        m_HungerBar.Value = m_Needs[Needs.Hunger];
+        m_StaminaBar.Value = m_Needs[Needs.Stamina];
+    }
+
     public void UseItem(IConsumable item)
     {
-        // TODO: delete log
-        Debug.Log($"Using consumable item - {((Item)item).ItemName}");
         item.Consume(this);
     }
     
     public void UseItem(IWearable item)
     {
-        // TODO: delete log
-        Debug.Log("Equipping item");
         EquipItem(item);
     }
     
@@ -45,23 +58,39 @@ public class Player : MonoBehaviour
     {
         float delta = amount / 100;
         m_Stats[stat] = Mathf.Clamp(m_Stats[stat] + delta, 0.0f, 1.0f);
-        // TODO: delete logs
-        Debug.Log($"Changing {stat} by {amount}");
-        Debug.Log($"New value is {m_Stats[stat]}");
+
+        StatBar bar = stat == Stats.Health ? m_HealthBar : m_ManaBar;
+        bar.Value = m_Stats[stat];
     }
     
     public void ChangeNeed(Needs need, float amount)
     {
         float delta = amount / 100;
         m_Needs[need] = Mathf.Clamp(m_Needs[need] + delta, 0.0f, 1.0f);
-        // TODO: delete logs
-        Debug.Log($"Changing {need} by {amount}");
-        Debug.Log($"New value is {m_Needs[need]}");
+
+        StatBar bar = need == Needs.Hunger ? m_HungerBar : m_StaminaBar;
+        bar.Value = m_Needs[need];
     }
     
     public void EquipItem(IWearable item)
     {
-        // TODO: implement
-        Debug.Log($"Equipping item {item.ItemName}");
+        InventorySlot slot = null;
+        switch (item.Slot)
+        {
+            case Slots.Weapon:
+                slot = m_WeaponSlot;
+                break;
+            case Slots.Body:
+                slot = m_ArmorSlot;
+                break;
+            case Slots.Head:
+                slot = m_HelmetSlot;
+                break;
+        }
+        
+        if (slot != null)
+        {
+            slot.SetIcon(item.Icon);
+        }
     }
 }

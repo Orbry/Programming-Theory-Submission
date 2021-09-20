@@ -13,8 +13,6 @@ public class Gear : Item, IWearable
     
     public override void OnPointerClick(PointerEventData eventData)
     {
-        // TODO: delete log
-        Debug.Log($"Item {name} clicked");
         if (Player.Instance != null)
         {
             Player.Instance.UseItem(this);
