@@ -114,4 +114,6 @@ MonoBehaviour:
   m_ItemName: Iron Helmet
   m_ItemIcon: {fileID: 21300000, guid: b227c6c1c35b36940b602110d9556b13, type: 3}
   m_SpriteRenderer: {fileID: 4443877708571056885}
+  m_OnHoverMaterial: {fileID: 2100000, guid: fa6817dfb0f48b946aed8e1043559b1b, type: 2}
+  m_DefaultMaterial: {fileID: 2100000, guid: 9ef09833dc2c3404d88335dc4ee33fd4, type: 2}
   m_Slot: 2

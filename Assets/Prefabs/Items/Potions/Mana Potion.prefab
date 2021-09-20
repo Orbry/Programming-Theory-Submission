@@ -112,6 +112,8 @@ MonoBehaviour:
   m_ItemName: Mana Potion
   m_ItemIcon: {fileID: 21300000, guid: 2d7d9ae02b7159843ac7d5ead0f8b89a, type: 3}
   m_SpriteRenderer: {fileID: 3190393971232072076}
+  m_OnHoverMaterial: {fileID: 2100000, guid: fa6817dfb0f48b946aed8e1043559b1b, type: 2}
+  m_DefaultMaterial: {fileID: 2100000, guid: 9ef09833dc2c3404d88335dc4ee33fd4, type: 2}
   m_Magnitude: 6
   m_Stat: 1
 --- !u!61 &8194872251665886749

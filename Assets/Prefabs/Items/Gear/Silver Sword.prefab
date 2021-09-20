@@ -116,4 +116,6 @@ MonoBehaviour:
   m_ItemName: Silver Sword
   m_ItemIcon: {fileID: 21300000, guid: 95052c6b62fb3de4695beaa99f842ac2, type: 3}
   m_SpriteRenderer: {fileID: 5061437735009551999}
+  m_OnHoverMaterial: {fileID: 2100000, guid: fa6817dfb0f48b946aed8e1043559b1b, type: 2}
+  m_DefaultMaterial: {fileID: 2100000, guid: 9ef09833dc2c3404d88335dc4ee33fd4, type: 2}
   m_Slot: 0

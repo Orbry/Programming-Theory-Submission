@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1476185319096515257}
   - component: {fileID: 9181009806086040680}
   m_Layer: 0
-  m_Name: Bread (1)
+  m_Name: Meat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,9 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb33f40ddbdb66743bcf2dd8428d4186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ItemName: Bread
+  m_ItemName: Meat
   m_ItemIcon: {fileID: 21300000, guid: 14e62563269c11443b9c936be93b95f4, type: 3}
   m_SpriteRenderer: {fileID: 3099221658726038417}
+  m_OnHoverMaterial: {fileID: 2100000, guid: fa6817dfb0f48b946aed8e1043559b1b, type: 2}
+  m_DefaultMaterial: {fileID: 2100000, guid: 9ef09833dc2c3404d88335dc4ee33fd4, type: 2}
   m_Saturation: 8
   m_Restoration: 3
 --- !u!61 &9181009806086040680
