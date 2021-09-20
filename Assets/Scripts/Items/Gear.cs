@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public abstract class Gear : Item, IWearable
+public class Gear : Item, IWearable
 {
-    public Player.Slots Slot { get; private set; }
+    [Header("Gear settings")]
+    [SerializeField] private Player.Slots m_Slot;
+    
     public Sprite Icon => m_ItemIcon;
+    public Player.Slots Slot => m_Slot;
     
     public override void OnPointerClick(PointerEventData eventData)
     {

@@ -24,6 +24,8 @@ public abstract class Item : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public abstract void OnPointerClick(PointerEventData eventData);
+
     # if UNITY_EDITOR
     // Updating sprite in Scene View while not in Play Mode
     // Using delegate as changing sprite in OnValidate throws a warning
@@ -36,6 +38,4 @@ public abstract class Item : MonoBehaviour, IPointerClickHandler
         }
     }
     #endif
-
-    public abstract void OnPointerClick(PointerEventData eventData);
 }

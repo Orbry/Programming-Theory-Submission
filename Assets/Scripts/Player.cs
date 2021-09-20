@@ -62,6 +62,6 @@ public class Player : MonoBehaviour
     public void EquipItem(IWearable item)
     {
         // TODO: implement
-        Debug.Log($"Equipping item");
+        Debug.Log($"Equipping item {item.ItemName}");
     }
 }
