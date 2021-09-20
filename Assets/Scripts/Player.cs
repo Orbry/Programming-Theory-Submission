@@ -10,15 +10,19 @@ public class Player : MonoBehaviour
     public enum Needs { Hunger, Stamina }
     public static Player Instance { get; private set; }
 
+    [Header("UI Bars")]
     [SerializeField] private StatBar m_HealthBar;
     [SerializeField] private StatBar m_ManaBar;
     [SerializeField] private StatBar m_HungerBar;
     [SerializeField] private StatBar m_StaminaBar;
 
+    [Header("UI Inventory")]
+    [SerializeField] private InventorySlot m_WeaponSlot;
+    [SerializeField] private InventorySlot m_ArmorSlot;
+    [SerializeField] private InventorySlot m_HelmetSlot;
+
     private Dictionary<Stats, float> m_Stats = new Dictionary<Stats, float>();
     private Dictionary<Needs, float> m_Needs = new Dictionary<Needs, float>();
-    
-    // TODO: hook gear with slots in UI
     
     private void Awake()
     {
@@ -42,15 +46,11 @@ public class Player : MonoBehaviour
 
     public void UseItem(IConsumable item)
     {
-        // TODO: delete log
-        Debug.Log($"Using consumable item - {((Item)item).ItemName}");
         item.Consume(this);
     }
     
     public void UseItem(IWearable item)
     {
-        // TODO: delete log
-        Debug.Log("Equipping item");
         EquipItem(item);
     }
     
@@ -74,7 +74,23 @@ public class Player : MonoBehaviour
     
     public void EquipItem(IWearable item)
     {
-        // TODO: implement
-        Debug.Log($"Equipping item {item.ItemName}");
+        InventorySlot slot = null;
+        switch (item.Slot)
+        {
+            case Slots.Weapon:
+                slot = m_WeaponSlot;
+                break;
+            case Slots.Body:
+                slot = m_ArmorSlot;
+                break;
+            case Slots.Head:
+                slot = m_HelmetSlot;
+                break;
+        }
+        
+        if (slot != null)
+        {
+            slot.SetIcon(item.Icon);
+        }
     }
 }

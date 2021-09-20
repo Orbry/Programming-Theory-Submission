@@ -25,4 +25,10 @@ public class InventorySlot : MonoBehaviour
 
         m_TextNode.text = m_DefaultName;
     }
+    
+    public void SetIcon(Sprite sprite)
+    {
+        m_ImageNode.sprite = sprite;
+        m_ImageNode.color = Color.white;
+    }
 }

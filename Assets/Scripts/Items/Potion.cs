@@ -11,15 +11,11 @@ public class Potion : Item, IConsumable
     
     public void Consume(Player player)
     {
-        // TODO: delete log
-        Debug.Log($"Drinking the {name}");
         player.ChangeStat(m_Stat, m_Magnitude);
     }
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        // TODO: delete log
-        Debug.Log($"Item {name} clicked");
         if (Player.Instance != null)
         {
             Player.Instance.UseItem(this);
