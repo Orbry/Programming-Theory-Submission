@@ -2,20 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-/* A class that simulates UI bars with non-interactable horizontal scrollbars
- */
+// Simulates UI bars with non-interactable horizontal scrollbars
 public class StatBar : MonoBehaviour
 {
     [SerializeField] private Scrollbar m_Scrollbar;
     [SerializeField] private Image m_HandleImage;
     [SerializeField] private Color m_BarColor;
 
+    private float m_Value = 0.2f;
+    public float Value
+    {
+        set {
+            m_Value = Mathf.Clamp(value, 0.0f, 1.0f);
+            m_Scrollbar.size = m_Value;
+        }
+    }
+
     void Start()
     {
         m_Scrollbar.interactable = false;
-        m_Scrollbar.size = Random.Range(0f, 1f);
+        m_Scrollbar.size = m_Value;
 
         if (m_BarColor != null)
         {
