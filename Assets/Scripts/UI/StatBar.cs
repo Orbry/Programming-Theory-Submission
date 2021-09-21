@@ -10,6 +10,7 @@ public class StatBar : MonoBehaviour
     [SerializeField] private Image m_HandleImage;
     [SerializeField] private Color m_BarColor;
 
+    // ENCAPSULATION
     private float m_Value = 0.2f;
     public float Value
     {

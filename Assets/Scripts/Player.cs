@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
         m_StaminaBar.Value = m_Needs[Needs.Stamina];
     }
 
+    // POLYMORPHISM
     public void UseItem(IConsumable item)
     {
         item.Consume(this);
@@ -51,6 +52,7 @@ public class Player : MonoBehaviour
     
     public void UseItem(IWearable item)
     {
+        // ABSTRACTION
         EquipItem(item);
     }
     

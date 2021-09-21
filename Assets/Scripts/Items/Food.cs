@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// INHERITANCE
 public class Food : Item, IConsumable
 {
     [Header("Food settings")]
@@ -15,6 +16,7 @@ public class Food : Item, IConsumable
         player.ChangeNeed(Player.Needs.Stamina, m_Restoration);
     }
 
+    // POLYMORPHISM
     public override void OnPointerClick(PointerEventData eventData)
     {
         base.OnPointerClick(eventData);
