@@ -16,6 +16,8 @@ public class Potion : Item, IConsumable
 
     public override void OnPointerClick(PointerEventData eventData)
     {
+        base.OnPointerClick(eventData);
+        
         if (Player.Instance != null)
         {
             Player.Instance.UseItem(this);

@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ItemName: Meat
   m_ItemIcon: {fileID: 21300000, guid: 14e62563269c11443b9c936be93b95f4, type: 3}
+  m_ItemsSFX: {fileID: 8300000, guid: 2bb466aad59404246b7ce2225a886a76, type: 3}
   m_SpriteRenderer: {fileID: 3099221658726038417}
   m_OnHoverMaterial: {fileID: 2100000, guid: fa6817dfb0f48b946aed8e1043559b1b, type: 2}
   m_DefaultMaterial: {fileID: 2100000, guid: 9ef09833dc2c3404d88335dc4ee33fd4, type: 2}

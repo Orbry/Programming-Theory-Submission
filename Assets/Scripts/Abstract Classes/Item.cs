@@ -9,9 +9,12 @@ using UnityEditor;
 
 public abstract class Item : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    protected static AudioSource m_AudioSource;
+    
     [Header("Item settings")]
     [SerializeField] protected string m_ItemName;
     [SerializeField] protected Sprite m_ItemIcon;
+    [SerializeField] protected AudioClip m_ItemsSFX;
     [SerializeField] protected SpriteRenderer m_SpriteRenderer;
     [SerializeField] private Material m_OnHoverMaterial;
     [SerializeField] private Material m_DefaultMaterial;
@@ -24,9 +27,14 @@ public abstract class Item : MonoBehaviour, IPointerClickHandler, IPointerEnterH
         {
             m_SpriteRenderer.sprite = m_ItemIcon;
         }
+
+        m_AudioSource = Camera.main.GetComponent<AudioSource>();
     }
 
-    public abstract void OnPointerClick(PointerEventData eventData);
+    public virtual void OnPointerClick(PointerEventData eventData)
+    {
+        m_AudioSource.PlayOneShot(m_ItemsSFX);
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
