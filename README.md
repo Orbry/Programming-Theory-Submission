@@ -1,4 +1,4 @@
-###Asset Credits
+### Assets Credits
 ---
 #### Sprites
 * _Cainos_ - [Pixel Art Icon Pack](https://assetstore.unity.com/packages/2d/gui/icons/pixel-art-icon-pack-rpg-158343)
