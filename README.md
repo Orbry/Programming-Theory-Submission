@@ -12,6 +12,8 @@ Later on I've also added some basic VFX and SFX for mouse clicks and item intera
 
 It took me a while to figure out how to implement most of that, but I've learned a lot in the process! And also I really like the final look :)
 
+[Link to submission](https://learn.unity.com/submission/614b057aedbc2a0ccd527206)
+
 ## Assets Credits
 _Big thanks to authors for their awesome assets!_
 
